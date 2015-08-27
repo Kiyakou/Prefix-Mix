@@ -1,0 +1,361 @@
+/*VARIABLES*/
+$code-back: #1A1A1A;
+$dot: #cc6699;
+$var: #0099cc;
+$prop: #993399;
+$int: #FF6600;
+$val: #FFFF66;
+/*MIXINS*/
+
+@mixin border-image($path, $size, $size, $syle){
+  -webkit-border-image: $path, $size, $size, $syle;
+          border-image: $path, $size, $size, $syle;
+}
+  
+@mixin box-decoration-break($slice, $clone) {
+  -webkit-box-decoration-break: $slice, $clone;
+          box-decoration-break: $slice, $clone;   
+}
+
+/* >COME BACK LATER @mixin clip-path($path...)*/
+
+@mixin column($columns, $size, $count, $mode){
+  -webkit-columns: $columns $mode;
+     -moz-columns: $columns;
+          columns: $columns;
+  /*-webkit-column-width: $length $mode;
+    -moz-column-width: $length;
+      column-width: $length;*/
+   -webkit-column-count: $count;
+    -moz-column-count: $count;
+      column-count: $count;
+}
+
+/* >COME BACK LATER @mixin cursor()*/
+
+/*CSS Device Adaptation*/
+@mixin device-adapt($height, $width) {
+  @-ms-viewport {
+    height: $height;
+     width:  $width; 
+  }
+  @-o-viewport {
+    height: $height;
+    width:  $width;
+  }
+}
+
+/* >COME BACK LATER @mixin device-pixel-ratio()*/
+
+/*******************************************************************
+FILTER EFFECT MIXINS 
+*******************************************************************/
+
+/* >COME BACK LATER @mixin filter-effects()*/
+
+/*******************************************************************
+FLEX-BOX MIXINS 
+*******************************************************************/
+
+/* >COME BACK LATER @mixin flex-box()*/
+
+/* >COME BACK LATER @mixin font-feature()*/
+
+
+@mixin font-kerning($mode){
+  -webkit-font-kerning: $mode;
+          font-kerning: $mode;
+}
+
+
+/* >COME BACK LATER @mixin gradients()*/
+@mixin gradient-top-bottom($color1, $color2){
+  background: -webkit-linear-gradient($color1, $color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($color1, $color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($color1, $color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($color1, $color2); /* Standard syntax */
+}
+
+@mixin gradient-left-right($color1, $color2){
+  background: -webkit-linear-gradient(left, $color1, $color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, $color1, $color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, $color1, $color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, $color1, $color2); /* Standard syntax */
+}
+
+@mixin gradient-diagonal-right($color1, $color2){
+  background: -webkit-linear-gradient(left top, $color1, $color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, $color1, $color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, $color1, $color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, $color1, $color2); /* Standard syntax */
+}
+/*Still needed for UC Browser for Android*/
+
+/* >COME BACK LATER @mixin grid-layout()*/
+/* For microsoft based browsers*/
+
+/* >COME BACK LATER @mixin Intrinsic & Extrinsic Sizing()*/
+
+/*COME BACK LATER @mixin mask(){}*/
+
+
+/* >COME BACK LATER @mixin object-fit()*/
+
+/* >COME BACK LATER @mixin object-position()*/
+/*Needed for Opera */
+
+
+
+/* >COME BACK LATER @mixin regions(){
+  -webkit-
+}*/
+
+/* >COME BACK LATER @mixin repeat-gradient()*/
+
+@mixin scroll-snap($type, $repeat, $position){
+  -ms-scroll-snap-desitination: $position;
+    -ms-scroll-snap-coordinate: $position $position;
+    /*-ms-scroll-snap-points-x: $repeat($percentage);*/
+    /*-ms-scroll-snap-points-y: $repeat($percentage);*/
+          -ms-scroll-snap-type: $type;
+       scroll-snap-destination: $position;
+        scroll-snap-coordinate: $position $position;
+        /*scroll-snap-points-x: $repeat($percentage);*/
+        /*scroll-snap-points-y: $repeat($percentage);*/
+              scroll-snap-type: $type;
+}
+
+/*COME BACK LATER @mixin shape(){}*/
+
+@mixin tab-size($size){
+    -mox-tab-size: $size;
+         tab-size: $size;
+}
+
+@mixin text-align($mode){
+  -moz-text-align-last: $mode;
+       text-align-last: $mode;
+}
+
+@mixin text-size-adjust($mode){
+  -webkit-text-size-adjust: $mode;
+     -moz-text-size-adjust: $mode;
+      -ms-text-size-adjust: $mode;
+}
+
+@mixin text-decoration($style, $style, $color) {
+  -webkit-text-decoration: $style $style $color;
+          text-decoration: $style $style $color;
+}
+
+@mixin text-emphasis($style, $color) {
+  -webkit-text-emphasis: $style $color;
+          text-emphasis: $style $color;
+}
+
+/*******************************************************************
+TRANSFORM MIXINS (for Safari/IE9)
+*******************************************************************/
+/*MATRIX*/
+@mixin matrix($value, $value, $Value, $value, $value, $value){
+  -webkit-transform: matrix($value, $value, $Value, $value, $value, $value);
+      -ms-transform: matrix($value, $value, $Value, $value, $value, $value);
+          transform: matrix($value, $value, $Value, $value, $value, $value);
+}
+
+@mixin matrix3d($value, $value, $Value, $value, $value, $value,$value, $value, $Value, $value, $value,                                     $value, $value, $value, $Value, $value){
+  -webkit-transform: matrix3d($value, $value, $Value, $value, $value, $value,$value, $value, $Value, $value, $value,                                     $value, $value, $value, $Value, $value);
+      -ms-transform: matrix3d($value, $value, $Value, $value, $value, $value,$value, $value, $Value, $value, $value,                                     $value, $value, $value, $Value, $value);
+          transform: matrix3d($value, $value, $Value, $value, $value, $value,$value, $value, $Value, $value, $value,                                     $value, $value, $value, $Value, $value);
+}
+
+/*PERSPECTIVE*/
+
+@mixin perspective($value){
+  -wbekit-transform: perspective($value);
+      -ms-transform: perspective($value);
+          transform: perspective($value);
+}
+
+/*ROTATION */
+@mixin rotate($deg){
+  -wbekit-transform: rotate($deg);
+      -ms-transform: rotate($deg);
+          transform: rotate($deg);
+}
+
+@mixin rotate-x($deg){
+  -webkit-transform: rotateX($deg);
+      -ms-transform: rotateX($deg);
+          transform: rotateX($deg);
+}
+
+@mixin rotate-y($deg){
+  -webkit-transform: rotateY($deg);
+      -ms-transform: rotateY($deg);
+          transform: rotateY($deg);
+}
+
+@mixin rotate-z($deg){
+  -webkit-transform: rotateZ($deg);
+      -ms-transform: rotateZ($deg);
+          transform: rotateZ($deg);
+}
+/*SCALE*/
+
+@mixin scale($x, $y){
+  -webkit-transform: scale($x, $y);
+      -ms-transform: scale($x, $y);
+          transform: scale($x, $y);
+}
+
+@mixin scale3d($x, $y, $z){
+  -webkit-transform: scale($x, $y, $z);
+      -ms-transform: scale($x, $y, $z);
+          transform: scale($x, $y, $z);
+}
+
+@mixin scale-x($x){
+  -webkit-transform: scaleX($x);
+      -ms-transform: scaleX($x);
+          transform: scaleX($x);
+}
+
+@mixin scale-y($y){
+  -webkit-transform: scaleY($y);
+      -ms-transform: scaleY($y);
+          transform: scaleY($y);
+}
+
+@mixin scale-z($z){
+  -webkit-transform: scaleZ($z);
+      -ms-transform: scaleZ($z);
+          transform: scaleZ($z);
+}
+
+/*SKEW*/
+
+@mixin skew($x-deg, $y-deg){
+  -webkit-transform: skew($x-deg, $y-deg);
+      -ms-transform: skew($x-deg, $y-deg);
+          transform: skew($x-deg, $y-deg);
+}
+
+@mixin skew($x-deg, $y-deg){
+  -webkit-transform: skew($x-deg, $y-deg);
+      -ms-transform: skew($x-deg, $y-deg);
+          transform: skew($x-deg, $y-deg);
+}
+
+@mixin skew-x($deg){
+  -webkit-transform: skewX($deg);
+      -ms-transform: skewX($deg);
+          transform: skewX($deg);
+}
+
+@mixin skew-y($deg){
+  -webkit-transform: skewY($deg);
+      -ms-transform: skewY($deg);
+          transform: skewY($deg);
+}
+
+/*TRANSLATE*/
+@mixin translate($x, $y){
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+
+@mixin translate3d($x, $y, $z){
+  -webkit-transform: translate3d($x, $y, $z);
+      -ms-transform: translate3d($x, $y, $z);
+          transform: translate3d($x, $y, $z);
+}
+
+@mixin translate-x($x){
+  -webkit-transform: translateX($x);
+      -ms-transform: translateX($x);
+          transform: translateX($x);
+}
+
+@mixin translate-y($y){
+  -webkit-transform: translateY($y);
+      -ms-transform: translateY($y);
+          transform: translateY($y);
+}
+
+@mixin translate-z($x){
+  -webkit-transform: translateZ($z);
+      -ms-transform: translateZ($z);
+          transform: translateZ($z);
+}
+
+/* >COME BACK LATER @mixin transition()*/
+
+/*DOCUMENT STTYLES*/
+body {
+  background-color: #e8e8e8;
+  .prefix{
+     max-width: 100%;
+    text-align: center;
+    
+    .sass-logo {
+      max-width: 20%;
+      min-width: 10%;
+    }
+    h1 {
+      font-family: 'Cedarville Cursive', cursive;
+      font-size: 3em;
+    }
+    h4 {
+      font-family: 'Cedarville Cursive', cursive;
+      font-size: 1.5em;
+    }
+    #description {
+      font-weight: bold;
+      margin-top: 3em;
+    }
+  }
+  
+    .emphasis { 
+    @include text-emphasis(filled, $dot);  
+    @include skew(10deg, 10deg);  
+    @include perspective(80);  
+    font-size: 100px;
+      
+      span {
+        color: $dot;
+      }
+  }
+  .code-container {
+    background-color: $code-back;
+    border: solid 0.5em black;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 3em;
+    padding: 25px;
+    text-align: left;
+    width: 50%;
+    
+    .int {
+      color: $int;
+    }
+    
+    .prop {
+      color: $prop;
+    }
+    
+    .punc {
+      color: white;
+    }
+    
+    .val {
+      color: $val;
+    }
+    
+    .var {
+      color: $var;
+    }
+    
+  }
+}
