@@ -1,10 +1,4 @@
-/*VARIABLES*/
-$code-back: #1A1A1A;
-$dot: #cc6699;
-$var: #0099cc;
-$prop: #993399;
-$int: #FF6600;
-$val: #FFFF66;
+/* Below are the basic mixins. Flexbox is now under testing and won't be available till a later version*/
 /*MIXINS*/
 
 @mixin border-image($path, $size, $size, $syle){
@@ -292,70 +286,4 @@ TRANSFORM MIXINS (for Safari/IE9)
 
 /* >COME BACK LATER @mixin transition()*/
 
-/*DOCUMENT STTYLES*/
-body {
-  background-color: #e8e8e8;
-  .prefix{
-     max-width: 100%;
-    text-align: center;
-    
-    .sass-logo {
-      max-width: 20%;
-      min-width: 10%;
-    }
-    h1 {
-      font-family: 'Cedarville Cursive', cursive;
-      font-size: 3em;
-    }
-    h4 {
-      font-family: 'Cedarville Cursive', cursive;
-      font-size: 1.5em;
-    }
-    #description {
-      font-weight: bold;
-      margin-top: 3em;
-    }
-  }
-  
-    .emphasis { 
-    @include text-emphasis(filled, $dot);  
-    @include skew(10deg, 10deg);  
-    @include perspective(80);  
-    font-size: 100px;
-      
-      span {
-        color: $dot;
-      }
-  }
-  .code-container {
-    background-color: $code-back;
-    border: solid 0.5em black;
-    border-radius: 5px;
-    margin: auto;
-    margin-bottom: 3em;
-    padding: 25px;
-    text-align: left;
-    width: 50%;
-    
-    .int {
-      color: $int;
-    }
-    
-    .prop {
-      color: $prop;
-    }
-    
-    .punc {
-      color: white;
-    }
-    
-    .val {
-      color: $val;
-    }
-    
-    .var {
-      color: $var;
-    }
-    
-  }
-}
+
